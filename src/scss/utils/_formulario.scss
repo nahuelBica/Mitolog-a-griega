@@ -1,0 +1,70 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: v.$terciario;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: .5rem;
+    margin: 6rem auto;
+    padding: 4rem;
+
+    .item__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.5rem;
+        color: v.$blanco;
+        font-size: 1.7rem;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        @include m.tablet {
+            flex-direction: row;
+        }
+
+        label {
+            margin-bottom: 1rem;
+
+            @include m.tablet {
+                margin-bottom: 0rem;
+            }
+        }
+    
+        input {
+            width: 80%;
+            padding: 1rem;
+            border-radius: .5rem;
+        }
+
+        textarea {
+            min-width: 80%;
+            max-width: 80%;
+            padding: 1rem;
+            resize: none;
+            border-radius: .5rem;
+
+        }
+    }
+    .botones {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        @include m.tablet {
+            flex-direction:row;
+        }
+        .item__form--borrar {
+            @include m.boton(darken(v.$rojo, 10%), v.$blanco);
+        }
+        .item__form--send {
+            @include m.boton(v.$verde,v.$blanco);
+            margin-bottom: 1rem;
+            @include m.tablet {
+                margin-bottom:unset;
+            }
+        }
+    }
+}

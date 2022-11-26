@@ -1,0 +1,65 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer_2 {
+    background-color: v.$celeste;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    margin: 3rem auto 0 auto;
+
+
+    @include m.tablet {
+        flex-direction: row;
+    }
+
+    .footer__contacto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 30px;
+
+        p {
+            font-size: 30px;
+            text-align: center;
+        }
+        
+    }
+
+    .footer__basico {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+
+.copy {
+    background-color: darken(v.$celeste,5%);
+    padding: .5rem;
+    
+    .descripcion-pagina {
+        display: block;
+        text-align: center;
+        color: v.$grisClaro;
+    }
+}
+
+

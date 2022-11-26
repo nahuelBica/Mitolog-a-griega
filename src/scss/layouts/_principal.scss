@@ -1,0 +1,29 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.dioses {
+    display: grid;
+    grid-template-columns: 1fr ;
+    justify-items: center;
+    @include m.tablet {
+        grid-template-columns: repeat(3, 1fr) ;
+        
+    }
+    .dios {
+        background-color: v.$grisClaro;
+        display: block;
+        width: 80%;
+        margin-bottom: 2rem;
+        border-radius: .5rem;
+        transition: all ease-in-out .3s;
+        &:hover {
+            transform: scale(1.03);
+        }
+        .dios__img {
+            height: 50rem;
+        }
+        .dios__desc,
+        .dios__resumen {
+            text-align: center;
+        }
+    }
+}

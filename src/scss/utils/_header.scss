@@ -1,0 +1,111 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    background-color: v.$celeste;
+    .sidebar {
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,.9);
+        scroll-behavior: unset;
+        a{
+            text-align: center;
+            display: block;
+            color: v.$blanco;
+            font-size: 3.4rem;
+            font-weight: 500;
+            background-color: v.$terciario;
+            width: 80%;
+            margin: 10rem auto 3rem auto;
+            padding: 1rem;
+            border-radius: .3rem;
+            transition: all ease-in-out .3s;
+
+            &:hover {
+                background-color: darken(v.$terciario,10%);
+            }
+            &:last-of-type {
+                margin-top: unset;
+            }
+        }
+        &.mostrar {
+            display: flex;
+            flex-direction: column;
+        }
+        .cerrar-menu{
+            width: 5rem;
+            filter: invert(100%);
+            margin: 0 auto;
+            display: block;
+            transition: all ease-in-out .3s;
+
+            &:hover {
+                cursor: pointer;
+                filter: invert(85%);
+
+            }
+        }
+    } 
+}
+.contenedor__header {
+    display: flex;
+    justify-content:space-around;
+    max-width: 80rem;
+
+    .header__logo {
+        flex-grow: 1;
+        
+    }
+    .header__menu {
+        flex-grow: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .menu {
+            display: block;
+            transition: all ease-in-out .3s;
+            filter: invert(100%);
+            @include m.tablet {
+                display: none;
+            }
+            width: 5rem;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+            &.ocultar {
+                filter: unset;
+            }
+        }
+    }
+    
+    .header__items {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-grow: 3;
+        
+       
+        .item {
+            display: none;
+            text-decoration: none;
+            list-style: none;
+            color: v.$blanco;
+            font-size: 2rem;
+            font-family: v.$fuente_headings;
+            font-weight: bold;
+            transition: all ease-in-out .3s;
+            @include m.tablet {
+                display: block;
+            }
+            &:hover {
+                color: darken(v.$blanco, 15%);
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,1 @@
+const enviar=document.querySelector("#enviar"),form=document.querySelector("#form");enviar.addEventListener("click",e=>{console.log(e),e.preventDefault(),Swal.fire("Excelente!","Formulario enviado Correctamente!","success"),form.reset()});
